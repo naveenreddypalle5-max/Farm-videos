@@ -33,17 +33,17 @@ def clip(prefix):
 # push-in zoom, extra crop-zoom, caption group, end-card background?
 S = [
     ("c88ad34e", 0.0, 1.00, 4, 0.60, 1.00, 1.08, 1.00, 0, False),  # milk in the vessel
-    ("c88ad34e", 1.8, 5.80, 4, 0.60, 0.90, 1.04, 1.00, 1, False),  # milk from the tap
+    ("c88ad34e", 1.8, 5.80, 4, 0.60, 0.60, 1.04, 1.00, 1, False),  # milk from the tap
     ("454f31fc", 0.0, 1.00, 4, 0.50, 1.00, 1.06, 1.00, 2, False),  # curd in the pot
-    ("64f40d6b", 2.0, 4.60, 3, CUT, 1.00, 1.03, 1.00, 3, False),   # churner revealed
-    ("64f40d6b", 14.0, 16.5, 2, CUT, 1.00, 1.03, 1.00, 3, False),  # hands on churner
-    ("64f40d6b", 17.5, 21.0, 3, 0.60, 1.00, 1.05, 1.00, 3, False),  # churning machine
-    ("36c8c524", 1.0, 2.80, 3, CUT, 0.80, 1.04, 1.00, 4, False),   # butter in the tub
-    ("46d75d2b", 0.0, 3.00, 3, 0.60, 0.85, 1.04, 1.00, 4, False),  # hands with butter
-    ("187ba50d", 0.0, 2.00, 3, CUT, 0.85, 1.06, 1.00, 5, False),   # butter in the pan
-    ("ff3939bc", 0.3, 2.50, 2, CUT, 1.00, 1.04, 1.00, 5, False),   # melting froth
-    ("5fbfb1c9", 2.0, 4.50, 3, CUT, 1.00, 1.04, 1.00, 5, False),   # turning golden
-    ("e2695c1b", 1.0, 3.40, 2, 0.50, 1.00, 1.04, 1.00, 5, False),  # golden ghee
+    ("64f40d6b", 2.0, 4.60, 3, CUT, 0.70, 1.03, 1.00, 3, False),   # churner revealed
+    ("64f40d6b", 14.0, 16.5, 2, CUT, 0.65, 1.03, 1.00, 3, False),  # hands on churner
+    ("64f40d6b", 17.5, 21.0, 3, 0.60, 0.70, 1.05, 1.00, 3, False),  # churning machine
+    ("36c8c524", 1.0, 2.80, 3, CUT, 0.60, 1.04, 1.00, 4, False),   # butter in the tub
+    ("46d75d2b", 0.0, 3.00, 3, 0.60, 0.60, 1.04, 1.00, 4, False),  # hands with butter
+    ("187ba50d", 0.0, 2.00, 3, CUT, 0.60, 1.06, 1.00, 5, False),   # butter in the pan
+    ("ff3939bc", 0.3, 2.50, 2, CUT, 0.60, 1.04, 1.00, 5, False),   # melting froth
+    ("5fbfb1c9", 2.0, 4.50, 3, CUT, 0.60, 1.04, 1.00, 5, False),   # turning golden
+    ("e2695c1b", 1.0, 3.40, 2, 0.50, 0.60, 1.04, 1.00, 5, False),  # golden ghee
     ("8e1c51ca", 0.0, 1.80, 3, 0.90, 0.60, 1.08, 1.18, 6, False),  # finished ghee
     ("8e1c51ca", 1.2, 3.40, 7, 0.00, 1.00, 1.06, 1.18, 7, True),   # end-card background
 ]
@@ -157,11 +157,12 @@ E += [
     ("cream", c0 + 1.0, TOTAL, "Lab", 540, 948, "\\fad(700,0)\\fsp4\\t(0,2500,\\fsp8)",
      "TRADITIONAL BILONA GHEE  ·  HANDMADE", 6),
     ("gold", c0 + 1.45, TOTAL, "Draw", 540, 1215, "\\fad(500,0)\\1a&HFF&\\bord2.6",
-     "{\\p1}" + rrect(720, 250, 34) + "{\\p0}", 0),
-    ("cream", c0 + 1.6, TOTAL, "TelS", 540, 1150, "\\fad(600,0)", "ఆర్డర్ల కోసం సంప్రదించండి", 8),
-    ("gold", c0 + 1.85, TOTAL, "Phone", 540, 1252,
-     "\\move(540,1272,540,1252,0,700)\\fad(600,0)", PHONE, 12),
-    ("cream", c0 + 2.25, TOTAL, "Lab", 540, 1418, "\\fad(700,0)\\fsp12", "CALL TO ORDER", 6),
+     "{\\p1}" + rrect(720, 300, 34) + "{\\p0}", 0),
+    ("cream", c0 + 1.6, TOTAL, "TelS", 540, 1128, "\\fad(600,0)", "ఆర్డర్ల కోసం సంప్రదించండి", 8),
+    ("gold", c0 + 1.85, TOTAL, "Phone", 540, 1220,
+     "\\move(540,1240,540,1220,0,700)\\fad(600,0)", PHONE, 12),
+    ("gold", c0 + 2.1, TOTAL, "Lab", 540, 1306, "\\fad(600,0)\\fsp10", "CALL  ·  WHATSAPP", 6),
+    ("cream", c0 + 2.4, TOTAL, "Lab", 540, 1440, "\\fad(700,0)\\fsp12", "ORDER NOW", 6),
 ]
 
 STYLES = [
@@ -213,7 +214,7 @@ write_ass(ASS_CREAM, {"cream"}, "&H00DCEBF7")  # warm cream #F7EBDC
 # ------------------------------------------------------------ gold gradient
 # Metallic gold: pale highlight at the top of each text line, deep amber below.
 bands = [(CAP_Y - 62, CAP_Y + 52), (RULE_Y - 4, RULE_Y + 4), (584, 614), (640, 740),
-         (770, 782), (812, 905), (1085, 1345)]
+         (770, 782), (812, 905), (1060, 1370)]
 stops = np.array([0.0, 0.42, 0.5, 0.62, 1.0])
 cols = np.array([[255, 240, 190], [236, 196, 108], [196, 146, 52], [214, 166, 72],
                  [246, 214, 132]], float)
